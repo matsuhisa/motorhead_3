@@ -138,6 +138,8 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    view_source_map (0.1.1)
+      rails (>= 3.2)
     web-console (3.1.1)
       activemodel (>= 4.2)
       debug_inspector
@@ -162,6 +164,7 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier
+  view_source_map
   web-console
 
 BUNDLED WITH
