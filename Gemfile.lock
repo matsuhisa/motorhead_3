@@ -1,3 +1,8 @@
+PATH
+  remote: app/engines/new_books
+  specs:
+    new_books (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -150,6 +155,7 @@ DEPENDENCIES
   jquery-rails
   motorhead
   mysql2
+  new_books!
   rails
   sass-rails
   sdoc (~> 0.4.0)
