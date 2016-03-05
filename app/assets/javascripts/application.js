@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function($) {
+  $('.js_select-books').on('change', function(){
+    var book_id = $('.js_select-books option:selected').val();
+    if(book_id){
+      var json_url = '/books/' + book_id + '.json';
+      console.log(json_url);
+      $.ajax({url: json_url, type: 'GET'}).done(function(response){
+        if(response.status == 'success'){
+          console.log(response.name);
+        }
+      });
+    }
+
+  });
+});

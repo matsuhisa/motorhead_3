@@ -2,6 +2,8 @@
 
 <h1>Listing Books</h1>
 
+<%= select_tag 'foo', options_from_collection_for_select(@books, :id, :name, selected: 2), {class: 'js_select-books'} %>
+
 <table>
   <thead>
     <tr>
