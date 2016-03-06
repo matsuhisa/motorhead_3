@@ -60,7 +60,12 @@ end
 
 ## view の設定
 
+* motorhead で作ったEnginesにviewを設置します
+ * EnginesにあるCSSファイルを読み込みます
+ * renderでは、app/views にあるファイルを読み込みます
+
 ### テンプレートファイル
+
 
 ```erb:app/engines/new_books/app/views/new_books/books/index.html.erb
 <%= stylesheet_link_tag "new_books/application", media: "all" %>
