@@ -1,19 +1,22 @@
 default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
   adapter: mysql2
   pool: 5
   encoding: utf8
-
-development:
-  <<: *default
   username: root
   password:
   host: 127.0.0.1
   database: motorhead_3_development
 
 test:
-  <<: *default
+  adapter: mysql2
+  pool: 5
+  encoding: utf8
   database: motorhead_3_test
 
 production:
   <<: *default
-  database: motorhead_3_production
