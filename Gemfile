@@ -12,6 +12,8 @@ gem 'active_decorator'
 gem 'action_args'
 gem 'motorhead', require: ['motorhead', 'motorhead/road_crew']
 
+gem 'gemoji'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
