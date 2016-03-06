@@ -2,6 +2,10 @@
 
 [motorhead](https://github.com/amatsuda/motorhead)を使うと、普段のページを丸ごと置き換えることが可能です。
 
+サンプルページ
+
+* https://evening-lowlands-34087.herokuapp.com/books
+
 # scaffold
 
 scaffold でサンプルをとりあえず作ります
