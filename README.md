@@ -8,16 +8,23 @@
 
 # scaffold
 
-scaffold でサンプルをとりあえず作ります
+scaffold でサンプルを作ります。書籍（book）と著者（author）について用意します
 
 ```
 rails generate scaffold Book name:string price:integer description:text
+rails generate scaffold Author name:string description:text
+rails generate model BookAuthor book_id:integer author_id:integer
 ```
 
 # motorhead の設定
 
-## g motorhead
+## Gemfile
 
+```
+gem 'motorhead', require: ['motorhead', 'motorhead/road_crew']
+```
+
+## g motorhead
 
 ```
 rails g motorhead new_books
@@ -25,7 +32,7 @@ rails g motorhead new_books
 
 ## engine.rb
 
-確率を1/2ぐらいになるようにしています。
+アクセスする1/2で表示するようにしています。
 
 ```ruby:app/engines/new_books/lib/new_books/engine.rb
 require 'motorhead/engine'
@@ -41,7 +48,7 @@ end
 
 ## ruotes.rb の設定
 
-localhost:3000/books でアクセスしたら、Motorhead の Controllerを使うようにroutes.rb を設定します。
+http://localhost:3000/books にアクセスしたら、Motorhead の Controller を使うように routes.rb を設定します。
 
 ```ruby:app/engines/new_books/config/routes.rb
 NewBooks::Engine.routes.draw do
@@ -51,12 +58,15 @@ end
 
 ## controller の設定
 
+置き換える Controller
+
 ```ruby:app/engines/new_books/app/controllers/new_books/books_controller.rb
 class NewBooks::BooksController < ::BooksController
   include Motorhead::Controller
 
   def index
-    @books = Book.limit(1)
+    super
+    @authors = Author.all
   end
 
 end
