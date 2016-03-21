@@ -2,7 +2,8 @@ class NewBooks::BooksController < ::BooksController
   include Motorhead::Controller
 
   def index
-    @books = Book.limit(1)
+    super
+    @authors = Author.all
   end
 
   def show
